@@ -1,2 +1,2 @@
 # pokemonApp
-App created with PokeApi
+App created with PokeApi & PokeApi Sprites
