@@ -1,0 +1,135 @@
+body{
+  background-image: linear-gradient(red, white);
+}
+
+.container {
+  width: 80%;
+  height: 200vh;
+  margin: auto;
+  display:flex;
+  justify-content: center;
+}
+
+/* Main Header  */
+.main {
+  color:black;
+}
+
+/*  Div from the LoadPokemon file  */
+
+.load-poke{
+  display:flex;
+  flex-direction: column;
+  height: 140vh;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.load-poke > div{
+  width: 100%;
+  height: 40vh;
+  background-image: linear-gradient(gray,black);
+  border-radius: 5%;
+  box-shadow: 10px 5px 5px black;
+  font-size: 80%;
+}
+
+.attr-info {
+  height: 20vh;
+  width:75%;
+  text-align:center;
+  margin: auto;
+  font-style: cursive;
+  overflow: auto;
+  
+}
+
+.loadHeader {
+  width:100%;
+  height:10vh;
+  text-align: center;
+  font-family: 'Sofia', sans-serif;
+  font-size: 200%;
+}
+
+
+
+#theSelect {
+  appearance: none;
+  border: none;
+  padding-bottom: 5%;
+  background-color: inherit;
+  font-size: 150%;
+  font-style: italic;
+}
+
+#theSelect:focus{
+  outline: black;
+}
+
+.attr-info:hover{
+  color:white;
+}
+
+.attr-info {
+  font-family: "Audiowide", sans-serif;
+
+}
+
+/* Animation to the header */
+
+@keyframes myHeader {
+  0% {color: white;}
+  25%{color: lightgray}
+  50% {color: gray;}
+  100%{color: black}
+}
+
+.main:hover {
+  animation-name: myHeader;
+  animation-duration: 4s;
+}
+
+@media only screen and (min-width: 600px) {
+  .load-poke{
+    display: flex;
+    flex-wrap: wrap;
+    height: 60vh;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .load-poke > div {
+    width: 30%;
+    height: 50vh;
+    font-size: 100%;
+    background-image: linear-gradient(gray,black);
+    border-radius: 5%;
+    box-shadow: 10px 5px 5px black;
+  }
+
+  .container {
+    height: 110vh;
+  }
+
+  .attr-info{
+    height: 30vh;
+    width:75%;
+    text-align:center;
+    margin:auto;
+    overflow: auto;
+    
+  }
+
+  /* Add animation below to Pokemon Attributes */
+
+  #attr-div{
+    transition: all .2s ease-in-out;
+  }
+
+  #attr-div:hover{
+    transform: scale(1.1);
+  }
+} 
+
+
