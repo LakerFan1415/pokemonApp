@@ -7,7 +7,7 @@ const SearchBox = (props) => {
     return(
         <div>
         <input id='pokeInput' type='text' placeholder='Enter a Pokemon' onKeyPress={clickChange} />
-        <button onClick={clickChange}>Submit</button>
+        <button className='poke-input-button' onClick={clickChange}>Submit</button>
         </div>
     )
 }

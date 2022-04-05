@@ -21,6 +21,45 @@ body{
   font-size: 3rem;
 }
 
+/* Animation to the header */
+
+@keyframes myHeader {
+  0% {color: white;}
+  50% {color: gray;}
+  100%{color: black}
+}
+
+.main:hover {
+  animation-name: myHeader;
+  animation-duration: 1s;
+}
+
+
+/* SearchBox Styles */
+#pokeInput {
+  margin-right: .5%;
+  box-shadow: .5rem .5rem 1rem rgb(32, 29, 29);
+  border-radius: 5px;
+}
+
+#pokeInput:focus,
+#pokeInput:hover {
+  box-shadow: -.5rem .2rem 1rem rgb(199, 195, 195), -.5rem -.2rem 1rem rgb(199, 195, 195);
+}
+
+.poke-input-button {
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: .5rem .5rem 1rem rgb(32, 29, 29);
+
+}
+
+.poke-input-button:hover {
+  background-color: gray;
+  transform: translateY(1px);
+}
+
+
 /*  Div Wrapper for Attributes  */
 
 .load-poke{
@@ -39,7 +78,7 @@ body{
   height: 20vh;
   background-image: linear-gradient(gray,black);
   border-radius: 5%;
-  box-shadow: 10px 5px 5px black;
+  box-shadow: 10px 5px 5px gray;
   font-size: 80%;
   overflow: auto;
   color: #ffffff;
@@ -83,21 +122,6 @@ body{
 }
 
 
-/* Animation to the header */
-
-@keyframes myHeader {
-  0% {color: white;}
-  25%{color: lightgray}
-  50% {color: gray;}
-  100%{color: black}
-}
-
-.main:hover {
-  animation-name: myHeader;
-  animation-duration: 4s;
-}
-
-
 /*  Footer Styles */
 footer {
   font-size: 1.5rem;
@@ -137,7 +161,7 @@ footer {
     font-size: 100%;
     background-image: linear-gradient(gray,black);
     border-radius: 5%;
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 10px 5px 5px rgb(32, 29, 29);
     overflow: auto;
   }
 
