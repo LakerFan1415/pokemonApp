@@ -1,10 +1,10 @@
 body{
-  background-image: linear-gradient(red, white);
+  background-image: linear-gradient(#ff0000, #ffffff);
 }
 
 .container {
   width: 80%;
-  height: 200vh;
+  height: 100vh;
   margin: auto;
   display:flex;
   justify-content: center;
@@ -15,34 +15,41 @@ body{
   color:black;
 }
 
-/*  Div from the LoadPokemon file  */
+/*  Div Wrapper for Attributes  */
 
 .load-poke{
   display:flex;
   flex-direction: column;
-  height: 140vh;
+  height: 70vh;
   justify-content: space-between;
   align-items: center;
   
 }
 
-.load-poke > div{
+/*.load-poke > div */
+.attr-div {
   width: 100%;
-  height: 40vh;
+  height: 20vh;
   background-image: linear-gradient(gray,black);
   border-radius: 5%;
   box-shadow: 10px 5px 5px black;
   font-size: 80%;
+  overflow: auto;
+  color: #ffffff;
 }
 
-.attr-info {
-  height: 20vh;
-  width:75%;
-  text-align:center;
+.attr-list {
+  list-style-type: none;
+  width: 100%;
   margin: auto;
-  font-style: cursive;
-  overflow: auto;
-  
+  padding: 0;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.attr-list > li {
+  width: 33%;
 }
 
 .loadHeader {
@@ -68,14 +75,6 @@ body{
   outline: black;
 }
 
-.attr-info:hover{
-  color:white;
-}
-
-.attr-info {
-  font-family: "Audiowide", sans-serif;
-
-}
 
 /* Animation to the header */
 
@@ -91,43 +90,38 @@ body{
   animation-duration: 4s;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px) {
+
+  .container {
+    height: 100vh;
+  }
+
+
   .load-poke{
     display: flex;
     flex-wrap: wrap;
-    height: 60vh;
+    height: 40vh;
     flex-direction: row;
     justify-content: space-between;
   }
-  .load-poke > div {
+  /*.load-poke > div */
+  .attr-div{
     width: 30%;
-    height: 50vh;
+    height: 30vh;
     font-size: 100%;
     background-image: linear-gradient(gray,black);
     border-radius: 5%;
     box-shadow: 10px 5px 5px black;
-  }
-
-  .container {
-    height: 110vh;
-  }
-
-  .attr-info{
-    height: 30vh;
-    width:75%;
-    text-align:center;
-    margin:auto;
     overflow: auto;
-    
   }
 
   /* Add animation below to Pokemon Attributes */
 
-  #attr-div{
+  .attr-div{
     transition: all .2s ease-in-out;
   }
 
-  #attr-div:hover{
+  .attr-div:hover{
     transform: scale(1.1);
   }
 } 

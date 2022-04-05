@@ -4,6 +4,7 @@ import './App.css';
 import LoadPokemon from './components/LoadPokemon';
 import SearchBox from './components/SearchBox';
 import Attributes from './components/Attributes';
+import Footer from './components/Footer'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     document.getElementById('pokeInput').value = '';
     document.getElementById('theSelect').style.display = 'initial';
     setPokemon(inputValue);
+
     }
   }
 
@@ -36,7 +38,9 @@ function App() {
           <Attributes name={'Moves'} attribute={pokemonStats.Moves}/>
           <Attributes name={'Stats'} attribute={pokemonStats.Stats}/>
         </div>
+        <Footer />
       </div>
+      
     </div>
   )
 

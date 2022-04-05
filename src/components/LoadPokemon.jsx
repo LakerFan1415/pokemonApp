@@ -57,6 +57,8 @@ const LoadPokemon = (props) => {
     
     }
 
+
+
             return (
                 <div>
                     <h2 className='loadHeader font-effect-emboss'>{!pokemon
