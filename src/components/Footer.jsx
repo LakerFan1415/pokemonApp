@@ -1,8 +1,8 @@
 const Footer = () => {
     return (
-        <div>
-            <p>This application is powered by the <a href="https://pokeapi.co/docs/v2">PokeApi</a></p>
-        </div>
+        <footer>
+            <p>This application is powered by the <a className="footer-link" href="https://pokeapi.co/docs/v2" target="_blank">PokeApi</a></p>
+        </footer>
     )
 }
 

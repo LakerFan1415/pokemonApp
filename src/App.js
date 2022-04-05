@@ -30,7 +30,7 @@ function App() {
   return (
     <div className='container'>
       <div style={{width: '100%', textAlign: 'center'}}>
-        <h1 className='main font-effect-shadow-multiple'>The Pokemon App</h1>
+        <h1 className='main font-effect-shadow-multiple'>Pokemon Application</h1>
         <SearchBox  clickChange={handleClick} />
         <LoadPokemon pokemon={pokemon} statistics={setPokemonStats} />
         <div className='load-poke'>
