@@ -5,7 +5,7 @@
 - React
 - PokeApi
 
-## Adding Additional Functionality
+### Adding Additional Functionality
 
 - Updating UI
 - Caching Requests
