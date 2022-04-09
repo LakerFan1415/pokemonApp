@@ -11,7 +11,11 @@ function App() {
 
   const [pokemon, setPokemon] = useState('');
 
+  const [prevPokemon, setPrevPokemon] = useState('');
+
+  /*  Update time used to help with knowing when statistics were set  */
   const [pokemonStats, setPokemonStats] = useState({
+    'updateTime': '',
     'Versions': [],
     'Moves': [],
     'Stats': []
@@ -22,6 +26,7 @@ function App() {
     let inputValue = document.getElementById('pokeInput').value.toLowerCase();
     document.getElementById('pokeInput').value = '';
     document.getElementById('theSelect').style.display = 'initial';
+    setPrevPokemon(pokemon);
     setPokemon(inputValue);
 
     }
@@ -32,7 +37,7 @@ function App() {
       <div style={{width: '100%', textAlign: 'center'}}>
         <h1 className='main font-effect-shadow-multiple'>Pokemon Application</h1>
         <SearchBox  clickChange={handleClick} />
-        <LoadPokemon pokemon={pokemon} statistics={setPokemonStats} />
+        <LoadPokemon pokemon={pokemon} prevPokemon={prevPokemon} statsTime={pokemonStats.updateTime} setPokemonStats={setPokemonStats} />
         <div className='load-poke'>
           <Attributes name={'Versions'} attribute={pokemonStats.Versions}/>
           <Attributes name={'Moves'} attribute={pokemonStats.Moves}/>
