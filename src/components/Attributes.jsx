@@ -4,8 +4,8 @@ const Attributes = (props) => {
 
     const { name, attribute} = props;
 
-    const splitAttribute = attribute.map((el) => {
-        return <li>{(el[0].toUpperCase() + el.slice(1) + ' ')}</li>
+    const splitAttribute = attribute.map((el, id) => {
+        return <li key={id}>{(el[0].toUpperCase() + el.slice(1) + ' ')}</li>
     })
 
     if (attribute){
