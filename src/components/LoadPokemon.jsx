@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const LoadPokemon = (props) => {
 
-    const {pokemon, prevPokemon , statsTime, setPokemonStats} = props;
+    const {pokemon, prevPokemon, setPrevPokemon , statsTime, setPokemonStats} = props;
 
     let pokeStats = {
         updateTime: "",
@@ -11,12 +11,8 @@ const LoadPokemon = (props) => {
         Stats: []
     }
 
-    var needFetched = true;
-
     useEffect(() => {
-        if(pokemon && needFetched){
             fetchingPoke();
-        }
     })
 
     /*
@@ -50,26 +46,36 @@ const LoadPokemon = (props) => {
    
     const fetchingPoke = async () => {
 
+        let lsPokemon = JSON.parse(localStorage.getItem(pokemon));
+
         if(!pokemon){
             return;
         }
 
-        if(localStorage.getItem(pokemon)){
+        if(lsPokemon){
+
 
             /*Check time of request
               If request longer than 5 min (300,000 ms) -> send another request  
             */
-           let cachedPokemon = JSON.parse(localStorage.getItem(pokemon));
-           let cachedTime = new Date(cachedPokemon.cacheTime);
-           let currentTime = new Date();
-           
-           console.log(`Cached time is ${cachedTime.getTime()}`)
-           console.log(`Current time is ${currentTime.getTime()}`)
 
-           decipherFetch(cachedPokemon, "No")
+            //FINISH THIS SECTION -> SET WHEN NEED TO MAKE ANOTHER REQUEST TIME IS IS TOO LONG  
+
+           let cachedTime = new Date(lsPokemon.cacheTime).getTime();
+           let currentTime = new Date().getTime();
+           
+           let timeDifference = currentTime - cachedTime
+           console.log(timeDifference) 
+
+           if(60000 > Math.abs(parseInt((cachedTime - currentTime)))){
+
+           decipherFetch(lsPokemon, "No")
 
            return;
 
+           }
+
+           
         }
 
 
@@ -110,6 +116,7 @@ const LoadPokemon = (props) => {
             pokeStats.Stats.push(`${s.stat.name}-${s.base_stat}`)
         })
 
+
         /* Caching Request in Local Storage */
         if(setLS == "Yes") {
 
@@ -121,12 +128,21 @@ const LoadPokemon = (props) => {
                 "stats": obj.stats 
             }
         ))
+
+        setPokemonStats(pokeStats);
+        setPrevPokemon(pokemon);
+
         }
 
-        /* Update Statistics if pokemon is different */
+        /* Update Statistics if pokemon is different 
+        if(prevPokemon != pokemon) {
+            setPokemonStats(pokeStats);
+            setPrevPokemon(pokemon);
+        }
+        */
         
 
-        document.getElementById('theSelect').focus();
+        //document.getElementById('theSelect').focus();
     
     }
 
