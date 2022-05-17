@@ -52,7 +52,8 @@ const LoadPokemon = (props) => {
             return;
         }
 
-        if(lsPokemon){
+        //Read From Local Storage
+        if(localStorage.getItem(pokemon)){
 
 
             /*Check time of request
@@ -61,11 +62,11 @@ const LoadPokemon = (props) => {
 
             //FINISH THIS SECTION -> SET WHEN NEED TO MAKE ANOTHER REQUEST TIME IS IS TOO LONG  
 
-           let cachedTime = new Date(lsPokemon.cacheTime).getTime();
+           let cachedTime = localStorage.getItem(pokemon).cacheTime;
            let currentTime = new Date().getTime();
            
            let timeDifference = currentTime - cachedTime
-           console.log(timeDifference) 
+           console.log(cachedTime) 
 
            if(60000 > Math.abs(parseInt((cachedTime - currentTime)))){
 
