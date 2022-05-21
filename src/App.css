@@ -99,27 +99,13 @@ body{
   width: 33%;
 }
 
-.loadHeader {
+#loadHeader {
   width:100%;
-  height:10vh;
+  height:5vh;
   text-align: center;
   font-family: 'Sofia', sans-serif;
   font-size: 200%;
-}
-
-
-
-#theSelect {
-  appearance: none;
-  border: none;
-  padding-bottom: 5%;
-  background-color: inherit;
-  font-size: 150%;
-  font-style: italic;
-}
-
-#theSelect:focus{
-  outline: black;
+  margin-bottom: 0;
 }
 
 
