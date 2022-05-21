@@ -43,7 +43,7 @@ function App() {
       let currentTime = new Date().getTime();
       let timeDifference = currentTime - cachedTime
 
-      //Only fetch is greater than 2 minutes -> 120000 ms
+      //Only Fetch is greater than 2 minutes -> 120000 ms
       if(timeDifference < 120000) {
 
         decipherFetch(cachedPokemon, pokemon)
